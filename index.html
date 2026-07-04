@@ -395,12 +395,21 @@
 
   form.f{display:flex;flex-direction:column;gap:14px;}
   .f label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-dim);margin-bottom:6px;display:block;}
-  .f input, .f textarea{
+  .f input, .f textarea, .f select{
     width:100%;background:var(--bg-alt);border:1px solid var(--line);border-radius:8px;padding:13px 14px;
     color:var(--ink);font-family:var(--sans);font-size:14.5px;
   }
-  .f input:focus, .f textarea:focus{outline:none;border-color:var(--accent-2);}
+  .f select{appearance:none;-webkit-appearance:none;cursor:pointer;}
+  .f input:focus, .f textarea:focus, .f select:focus{outline:none;border-color:var(--accent-2);}
   .f textarea{resize:vertical;min-height:110px;}
+  .f-checks{display:flex;flex-wrap:wrap;gap:9px;}
+  .f-check{
+    display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:100px;
+    padding:9px 14px;font-size:13px;color:var(--ink-dim);cursor:pointer;transition:border-color .2s, color .2s;
+    margin-bottom:0;text-transform:none;letter-spacing:normal;font-family:var(--sans);
+  }
+  .f-check:has(input:checked){border-color:var(--accent-2);color:var(--ink);}
+  .f-check input{width:auto;accent-color:var(--accent-2);}
   .f button{margin-top:6px;align-self:flex-start;}
 
   footer{background:#0f0d09;border-top:1px solid var(--line);padding:44px 0 28px;}
@@ -616,38 +625,38 @@
             <li><span class="st-num">03</span><span class="st-text i18n" data-fr="Rapport écrit avec les chiffres et la liste des actions à corriger." data-en="A written report with the numbers and a list of fixes.">Rapport écrit avec les chiffres et la liste des actions à corriger.</span></li>
             <li><span class="st-num">04</span><span class="st-text i18n" data-fr="Appel de 90 minutes pour tout expliquer." data-en="A 90-minute call to walk through it.">Appel de 90 minutes pour tout expliquer.</span></li>
           </ul>
-          <div class="offer-guarantee">✓ <span class="i18n" data-fr="Crédité à 100% si vous lancez un sprint sous 30 jours" data-en="100% credited if you start a sprint within 30 days">Crédité à 100% si vous lancez un sprint sous 30 jours</span></div>
+          <div class="offer-guarantee">✓ <span class="i18n" data-fr="Crédité à 100% si vous lancez La Machine COD sous 30 jours" data-en="100% credited if you start La Machine COD within 30 days">Crédité à 100% si vous lancez La Machine COD sous 30 jours</span></div>
         </div>
 
         <div class="offer-card feat reveal">
           <span class="offer-tag i18n" data-fr="Le plus demandé" data-en="Most requested">Le plus demandé</span>
-          <span class="offer-name i18n" data-fr="Sprint 30 jours" data-en="30-day sprint">Sprint 30 jours</span>
-          <h3>Opération Marge Nette</h3>
-          <div class="offer-price">180 000 <small>DZD <span class="i18n" data-fr="· paiement unique" data-en="· one-time">· paiement unique</span></small></div>
-          <p class="i18n" data-fr="On corrige trois choses en 30 jours : la confirmation, les retours, et vos chiffres." data-en="We fix three things in 30 days: confirmation, returns, and your numbers.">On corrige trois choses en 30 jours : la confirmation, les retours, et vos chiffres.</p>
+          <span class="offer-name i18n" data-fr="6 semaines, en groupe" data-en="6 weeks, as a group">6 semaines, en groupe</span>
+          <h3>La Cohorte COD</h3>
+          <div class="offer-price">75 000 <small>DZD <span class="i18n" data-fr="· par place" data-en="· per seat">· par place</span></small></div>
+          <p class="i18n" data-fr="La méthode installée en groupe, sans passer par le 1-on-1." data-en="The method installed as a group, no 1-on-1 required.">La méthode installée en groupe, sans passer par le 1-on-1.</p>
           <ul class="offer-steps">
-            <li><span class="st-num">J1–5</span><span class="st-text i18n" data-fr="Audit complet : publicité, confirmation, transporteurs, retours." data-en="Full audit: ads, confirmation, carriers, returns.">Audit complet : publicité, confirmation, transporteurs, retours.</span></li>
-            <li><span class="st-num">J6–12</span><span class="st-text i18n" data-fr="Nouveaux scripts de confirmation (français/darija) et méthode de travail pour vos agents." data-en="New confirmation scripts (French/Darija) and a step-by-step process for your agents.">Nouveaux scripts de confirmation (français/darija) et méthode de travail pour vos agents.</span></li>
-            <li><span class="st-num">J13–20</span><span class="st-text i18n" data-fr="Process de retours et modèles de réclamation transporteur." data-en="Returns process and carrier claim templates.">Process de retours et modèles de réclamation transporteur.</span></li>
-            <li><span class="st-num">J21–27</span><span class="st-text i18n" data-fr="Tableau de bord avec vos chiffres : confirmation, retours, marge." data-en="Dashboard with your numbers: confirmation, returns, margin.">Tableau de bord avec vos chiffres : confirmation, retours, marge.</span></li>
-            <li><span class="st-num">J28–30</span><span class="st-text i18n" data-fr="Formation de votre équipe et 30 jours de suivi après le sprint." data-en="Team training and 30 days of follow-up after the sprint.">Formation de votre équipe et 30 jours de suivi après le sprint.</span></li>
+            <li><span class="st-num">S1</span><span class="st-text i18n" data-fr="Diagnostic : votre état actuel et le coût réel de votre RTO." data-en="Diagnostic: your current state and the real cost of your RTO.">Diagnostic : votre état actuel et le coût réel de votre RTO.</span></li>
+            <li><span class="st-num">S2</span><span class="st-text i18n" data-fr="Confirmation : scripts, KPIs agents, cadence d'appel." data-en="Confirmation: scripts, agent KPIs, call cadence.">Confirmation : scripts, KPIs agents, cadence d'appel.</span></li>
+            <li><span class="st-num">S3</span><span class="st-text i18n" data-fr="Livraison : optimisation transporteur, réduction du RTO." data-en="Delivery: carrier optimization, RTO reduction.">Livraison : optimisation transporteur, réduction du RTO.</span></li>
+            <li><span class="st-num">S4</span><span class="st-text i18n" data-fr="Équipe : rôles, redevabilité, reporting hebdomadaire." data-en="Team: roles, accountability, weekly reporting.">Équipe : rôles, redevabilité, reporting hebdomadaire.</span></li>
+            <li><span class="st-num">S5–6</span><span class="st-text i18n" data-fr="Marge par SKU, plan de contenu et feuille de route 90 jours." data-en="Margin per SKU, content plan and 90-day roadmap.">Marge par SKU, plan de contenu et feuille de route 90 jours.</span></li>
           </ul>
-          <div class="offer-guarantee">✓ <span class="i18n" data-fr="Garantie +5 points : sinon on continue gratuitement" data-en="+5 Points guarantee: if not, we keep working for free">Garantie +5 points : sinon on continue gratuitement</span></div>
+          <div class="offer-guarantee">✓ <span class="i18n" data-fr="Assignments complétées sans résultat : 1 mois de suivi 1-on-1 offert" data-en="Assignments completed with no results: 1 month of 1-on-1 follow-up free">Assignments complétées sans résultat : 1 mois de suivi 1-on-1 offert</span></div>
         </div>
 
         <div class="offer-card reveal">
           <span class="offer-name i18n" data-fr="Installation complète" data-en="Full installation">Installation complète</span>
           <h3>La Machine COD</h3>
-          <div class="offer-price">450 000 <small>DZD <span class="i18n" data-fr="· 3×150K" data-en="· 3×150K">· 3×150K</span></small></div>
+          <div class="offer-price">350 000 <small>DZD <span class="i18n" data-fr="· 3×125K" data-en="· 3×125K">· 3×125K</span></small></div>
           <p class="i18n" data-fr="L'installation complète, du diagnostic à une équipe autonome." data-en="The full installation, from diagnosis to an autonomous team.">L'installation complète, du diagnostic à une équipe autonome.</p>
           <ul class="offer-steps">
-            <li><span class="st-num">J1–21</span><span class="st-text i18n" data-fr="Audit et mise en place de la confirmation." data-en="Audit and confirmation system in place.">Audit et mise en place de la confirmation.</span></li>
-            <li><span class="st-num">J22–45</span><span class="st-text i18n" data-fr="Intégration transporteurs et process de retours." data-en="Carrier integration and returns process.">Intégration transporteurs et process de retours.</span></li>
-            <li><span class="st-num">J46–60</span><span class="st-text i18n" data-fr="Tableau de bord et analyse de vos clients." data-en="Dashboard and customer analysis.">Tableau de bord et analyse de vos clients.</span></li>
-            <li><span class="st-num">J61–90</span><span class="st-text i18n" data-fr="Restructuration des publicités Meta et formation complète de l'équipe." data-en="Meta ads restructure and full team training.">Restructuration des publicités Meta et formation complète de l'équipe.</span></li>
-            <li><span class="st-num">M4–12</span><span class="st-text i18n" data-fr="Livroo Growth inclus, avec un appel de suivi chaque mois." data-en="Livroo Growth included, with a monthly follow-up call.">Livroo Growth inclus, avec un appel de suivi chaque mois.</span></li>
+            <li><span class="st-num">J1–21</span><span class="st-text i18n" data-fr="Audit complet et pilier Confirmation installé." data-en="Full audit and Confirmation pillar installed.">Audit complet et pilier Confirmation installé.</span></li>
+            <li><span class="st-num">J22–45</span><span class="st-text i18n" data-fr="Piliers Livraison et Retours : transporteurs, réconciliation." data-en="Delivery and Returns pillars: carriers, reconciliation.">Piliers Livraison et Retours : transporteurs, réconciliation.</span></li>
+            <li><span class="st-num">J46–60</span><span class="st-text i18n" data-fr="Piliers Équipe et Revenu : KPIs, marge par SKU." data-en="Team and Revenue pillars: KPIs, margin per SKU.">Piliers Équipe et Revenu : KPIs, marge par SKU.</span></li>
+            <li><span class="st-num">J61–90</span><span class="st-text i18n" data-fr="Piliers Client et Croissance, formation complète de l'équipe." data-en="Customer and Growth pillars, full team training.">Piliers Client et Croissance, formation complète de l'équipe.</span></li>
+            <li><span class="st-num">M4–12</span><span class="st-text i18n" data-fr="12 mois de Livroo Growth inclus, avec un appel de suivi chaque mois." data-en="12 months of Livroo Growth included, with a monthly follow-up call.">12 mois de Livroo Growth inclus, avec un appel de suivi chaque mois.</span></li>
           </ul>
-          <div class="offer-guarantee">✓ <span class="i18n" data-fr="Garantie Machine : remboursement partiel + Livroo offert 12 mois" data-en="Machine guarantee: partial refund + 12 months of Livroo free">Garantie Machine : remboursement partiel + Livroo offert 12 mois</span></div>
+          <div class="offer-guarantee">✓ <span class="i18n" data-fr="Garantie Machine : RTO -5 points ou +80 000 DZD de profit, sinon 30 jours offerts" data-en="Machine guarantee: RTO -5 points or +80,000 DZD profit, or 30 extra days free">Garantie Machine : RTO -5 points ou +80 000 DZD de profit, sinon 30 jours offerts</span></div>
         </div>
       </div>
     </div>
@@ -738,21 +747,21 @@
         <div class="ladder">
           <div class="ladder-row">
             <span class="ladder-tier">ENTRY</span>
-            <div><div class="ladder-name">L'Autopsie COD</div><div class="ladder-desc i18n" data-fr="Diagnostic payant, crédité sur le sprint" data-en="Paid diagnostic, credited toward the sprint">Diagnostic payant, crédité sur le sprint</div></div>
+            <div><div class="ladder-name">L'Autopsie COD</div><div class="ladder-desc i18n" data-fr="Diagnostic payant, crédité sur La Machine COD" data-en="Paid diagnostic, credited toward La Machine COD">Diagnostic payant, crédité sur La Machine COD</div></div>
             <div></div>
             <div class="ladder-price">20 000 DZD<small class="i18n" data-fr="paiement unique" data-en="one-time">paiement unique</small></div>
           </div>
           <div class="ladder-row">
             <span class="ladder-tier">CORE</span>
-            <div><div class="ladder-name">Opération Marge Nette</div><div class="ladder-desc i18n" data-fr="Sprint COD 30 jours" data-en="30-day COD sprint">Sprint COD 30 jours</div></div>
+            <div><div class="ladder-name">La Cohorte COD</div><div class="ladder-desc i18n" data-fr="Programme de groupe, 6 semaines, 12 places max" data-en="Group program, 6 weeks, max 12 seats">Programme de groupe, 6 semaines, 12 places max</div></div>
             <div></div>
-            <div class="ladder-price">180 000 DZD<small class="i18n" data-fr="paiement unique" data-en="one-time">paiement unique</small></div>
+            <div class="ladder-price">75 000 DZD<small class="i18n" data-fr="par place" data-en="per seat">par place</small></div>
           </div>
           <div class="ladder-row">
             <span class="ladder-tier">PREMIUM</span>
             <div><div class="ladder-name">La Machine COD</div><div class="ladder-desc i18n" data-fr="Installation complète 90 jours + 12 mois Livroo" data-en="Full 90-day installation + 12 months of Livroo">Installation complète 90 jours + 12 mois Livroo</div></div>
             <div></div>
-            <div class="ladder-price">450 000 DZD<small class="i18n" data-fr="paiement 3×150K" data-en="paid in 3×150K">paiement 3×150K</small></div>
+            <div class="ladder-price">350 000 DZD<small class="i18n" data-fr="paiement 3×125K" data-en="paid in 3×125K">paiement 3×125K</small></div>
           </div>
         </div>
       </div>
@@ -927,7 +936,7 @@
         </div>
       </div>
 
-      <p class="elite-note reveal i18n" data-fr="Pour les marques qui font 5M+ DZD/mois et veulent déléguer entièrement leurs opérations e-commerce : une offre de direction externalisée existe. Elle ne se vend pas sur cette page — elle se discute, après La Machine." data-en="For brands doing 5M+ DZD/month who want to fully delegate their e-commerce operations: a fractional-director offer exists. It isn't sold on this page — it's discussed, after La Machine.">Pour les marques qui font 5M+ DZD/mois et veulent déléguer entièrement leurs opérations e-commerce : une offre de direction externalisée existe. Elle ne se vend pas sur cette page — elle se discute, après La Machine.</p>
+      <p class="elite-note reveal i18n" data-fr="Pour les marques qui font 5M+ DZD/mois et veulent DZN dans l'entreprise, pas seulement des conseils : la Direction E-commerce Externalisée existe (200 000 DZD/mois + % de la marge additionnelle, engagement 6 mois). Elle ne se vend pas sur cette page — elle se discute, après La Machine." data-en="For brands doing 5M+ DZD/month who want DZN inside the business, not just advice: the Outsourced E-commerce Direction exists (200,000 DZD/month + % of additional margin, 6-month commitment). It isn't sold on this page — it's discussed, after La Machine.">Pour les marques qui font 5M+ DZD/mois et veulent DZN dans l'entreprise, pas seulement des conseils : la Direction E-commerce Externalisée existe (200 000 DZD/mois + % de la marge additionnelle, engagement 6 mois). Elle ne se vend pas sur cette page — elle se discute, après La Machine.</p>
     </div>
   </section>
 
@@ -953,7 +962,7 @@
           </a>
           -->
           <div class="contact-link" style="cursor:default;">
-            <div><div class="cl-label i18n" data-fr="Livraison" data-en="Delivery">Livraison</div><div class="cl-value i18n" data-fr="2 sprints DZN par mois, maximum" data-en="Max 2 DZN sprints per month">2 sprints DZN par mois, maximum</div></div>
+            <div><div class="cl-label i18n" data-fr="Livraison" data-en="Delivery">Livraison</div><div class="cl-value i18n" data-fr="Max 3 clients Machine COD à la fois" data-en="Max 3 Machine COD clients at a time">Max 3 clients Machine COD à la fois</div></div>
           </div>
         </div>
 
@@ -965,6 +974,25 @@
           <div>
             <label class="i18n" data-fr="Email" data-en="Email">Email</label>
             <input type="email" id="f-email" required>
+          </div>
+          <div>
+            <label class="i18n" data-fr="Chiffre d'affaires mensuel" data-en="Monthly revenue">Chiffre d'affaires mensuel</label>
+            <select id="f-revenue" required>
+              <option value="" disabled selected class="i18n" data-fr="Choisir une tranche" data-en="Choose a range">Choisir une tranche</option>
+              <option value="<500K" class="i18n" data-fr="Moins de 500K DZD" data-en="Under 500K DZD">Moins de 500K DZD</option>
+              <option value="500K-1.5M" class="i18n" data-fr="500K – 1,5M DZD" data-en="500K – 1.5M DZD">500K – 1,5M DZD</option>
+              <option value="1.5M-5M" class="i18n" data-fr="1,5M – 5M DZD" data-en="1.5M – 5M DZD">1,5M – 5M DZD</option>
+              <option value="5M+" class="i18n" data-fr="Plus de 5M DZD" data-en="Over 5M DZD">Plus de 5M DZD</option>
+            </select>
+          </div>
+          <div>
+            <label class="i18n" data-fr="Votre plus gros problème en ce moment" data-en="Your biggest problem right now">Votre plus gros problème en ce moment</label>
+            <div class="f-checks">
+              <label class="f-check"><input type="checkbox" name="problem" value="Confirmation & RTO"><span class="i18n" data-fr="Confirmation & RTO" data-en="Confirmation & RTO">Confirmation & RTO</span></label>
+              <label class="f-check"><input type="checkbox" name="problem" value="Équipe & KPIs"><span class="i18n" data-fr="Équipe & KPIs" data-en="Team & KPIs">Équipe & KPIs</span></label>
+              <label class="f-check"><input type="checkbox" name="problem" value="Visibilité sur le revenu"><span class="i18n" data-fr="Visibilité sur le revenu" data-en="Revenue visibility">Visibilité sur le revenu</span></label>
+              <label class="f-check"><input type="checkbox" name="problem" value="Tout ça à la fois"><span class="i18n" data-fr="Tout ça à la fois" data-en="All of the above">Tout ça à la fois</span></label>
+            </div>
           </div>
           <div>
             <label class="i18n" data-fr="Votre situation" data-en="Your situation">Votre situation</label>
@@ -1037,9 +1065,11 @@
     e.preventDefault();
     const name = document.getElementById('f-name').value;
     const email = document.getElementById('f-email').value;
+    const revenue = document.getElementById('f-revenue').value;
+    const problems = Array.from(document.querySelectorAll('input[name="problem"]:checked')).map(c => c.value).join(', ') || '—';
     const msg = document.getElementById('f-msg').value;
     const subject = encodeURIComponent('Diagnostic DZN × Livroo — ' + name);
-    const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\n${msg}`);
+    const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\nChiffre d'affaires mensuel: ${revenue}\nProblème principal: ${problems}\n\n${msg}`);
     window.location.href = `mailto:sallamouri@gmail.com?subject=${subject}&body=${body}`;
   });
 </script>
